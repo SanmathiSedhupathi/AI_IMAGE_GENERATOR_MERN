@@ -43,7 +43,7 @@ stringData:
   CLOUDINARY_API_KEY: "429586181836363"
   CLOUDINARY_API_SECRET: "G80mJvQnzvf1kQAlhy5bJ6qH2tM"
   CLIENT_ORIGIN: "http://localhost:3000"
-  HUGGINGFACE_API_TOKEN: "hf_MMpLEsBGDhymaEoTKFEjzVbrxjdKxVkToHx"
+  HUGGINGFACE_API_TOKEN: "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"
   OPENAI_API_KEY: "your_openai_api_key"
 EOF
 
