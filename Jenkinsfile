@@ -4,7 +4,6 @@ pipeline {
         DOCKERHUB_USERNAME = 'sanmathisedhupathi'
         DOCKERHUB_PASSWORD = '08-Sep-2004'
     }
-
     stages {
         stage('Clone') {
             steps {
