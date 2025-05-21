@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import GenerateImage from "../components/form/GenerateImage";
 import GeneratedImageCard from "../components/cards/GeneratedImageCard";
@@ -37,6 +37,14 @@ const CreatePost = () => {
     prompt: "",
     photo: "",
   });
+
+  // Log photo URL when it updates
+  useEffect(() => {
+    if (post.photo) {
+      console.log("Photo URL:", post.photo);
+    }
+  }, [post.photo]);
+
   return (
     <Container>
       <Wrapper>

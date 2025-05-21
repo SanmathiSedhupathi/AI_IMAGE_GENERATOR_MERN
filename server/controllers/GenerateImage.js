@@ -1,33 +1,40 @@
+import axios from "axios";
 import * as dotenv from "dotenv";
 import { createError } from "../error.js";
-import { Configuration, OpenAIApi } from "openai";
 
 dotenv.config();
 
-// Setup open ai api key
-const configuration = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY,
-});
-const openai = new OpenAIApi(configuration);
-
-// Controller to generate Image
 export const generateImage = async (req, res, next) => {
   try {
-    const { prompt } = req.body;
+    console.log("TOKEN USED:", process.env.HUGGINGFACE_API_TOKEN);
+    const { inputs } = req.body;
+    console.log("Generating image with prompt:", inputs);
 
-    const response = await openai.createImage({
-      prompt,
-      n: 1,
-      size: "1024x1024",
-      response_format: "b64_json",
-    });
-    const generatedImage = response.data.data[0].b64_json;
-    res.status(200).json({ photo: generatedImage });
+    const response = await axios.post(
+      "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-3.5-large",
+      { inputs },
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.HUGGINGFACE_API_TOKEN}`,
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        
+      }
+    );
+    const base64Image = response.data.generated_image || response.data;
+
+// You can then send back with proper mime type, e.g. image/png
+res.status(200).json({
+  photoUrl: `data:image/png;base64,${base64Image}`,
+});
+    
   } catch (error) {
+    console.error("Hugging Face API error:", error.response?.data || error.message);
     next(
       createError(
-        error.status,
-        error?.response?.data?.error.message || error.message
+        error.response?.status || 500,
+        error.response?.data?.error || error.message
       )
     );
   }

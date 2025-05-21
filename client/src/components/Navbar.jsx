@@ -35,7 +35,7 @@ const Navbar = () => {
   console.log(path);
   return (
     <Container>
-      GemAI
+      Sanmathi_Sethupathi
       {path[1] === "post" ? (
         <Button
           text="Explore Posts"

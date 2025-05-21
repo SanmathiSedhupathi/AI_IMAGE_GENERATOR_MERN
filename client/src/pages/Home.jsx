@@ -106,7 +106,7 @@ const Home = () => {
     <Container>
       <HeadLine>
         Explore popular posts in the Community!
-        <Span>⦾ Generated with AI ⦾</Span>
+        <Span>⦾ Generate with AI ⦾</Span>
       </HeadLine>
       <SearchBar
         search={search}

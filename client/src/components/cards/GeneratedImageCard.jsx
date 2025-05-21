@@ -23,7 +23,9 @@ const Image = styled.img`
 `;
 
 const GeneratedImageCard = ({ src, loading }) => {
+  console.log("Image src:", src);
   return (
+    
     <Container>
       {loading ? (
         <>
@@ -33,7 +35,8 @@ const GeneratedImageCard = ({ src, loading }) => {
           Generating Your Image . . .
         </>
       ) : src ? (
-        <Image src={src} />
+        
+        <Image src={src} alt="Generated Image" />
       ) : (
         <>Write a prompt to generate image</>
       )}

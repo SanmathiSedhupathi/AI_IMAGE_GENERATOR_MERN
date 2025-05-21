@@ -49,53 +49,63 @@ const Actions = styled.div`
 `;
 
 const GenerateImage = ({
+  post,
+  setPost,
   createPostLoading,
   setcreatePostLoading,
   generateImageLoading,
   setGenerateImageLoading,
-  post,
-  setPost,
 }) => {
+
   const navigate = useNavigate();
+
+  // const [post, setPost] = useState({
+  //   name: "",
+  //   prompt: "",
+  //   photo: "",
+  // });
+  // const [createPostLoading, setcreatePostLoading] = useState(false);
+  // const [generateImageLoading, setGenerateImageLoading] = useState(false);
   const [error, setError] = useState("");
 
   const generateImage = async () => {
     setGenerateImageLoading(true);
     setError("");
-    await GenerateImageFromPrompt({ prompt: post.prompt })
-      .then((res) => {
-        setPost({
-          ...post,
-          photo: `data:image/jpeg;base64,${res?.data?.photo}`,
-        });
-        setGenerateImageLoading(false);
-      })
-      .catch((error) => {
-        setError(error?.response?.data?.message);
-        setGenerateImageLoading(false);
-      });
+    
+
+    try {
+      
+      const res = await GenerateImageFromPrompt({ inputs: post.prompt });
+      setPost((prevPost) => ({
+        ...prevPost,
+        photo: res?.data?.photoUrl || "",
+      }));
+    } catch (error) {
+      setError(error?.response?.data?.message || error.message);
+    } finally {
+      setGenerateImageLoading(false);
+    }
   };
+
   const createPost = async () => {
     setcreatePostLoading(true);
     setError("");
-    await CreatePost(post)
-      .then((res) => {
-        navigate("/");
-        setcreatePostLoading(false);
-      })
-      .catch((error) => {
-        setError(error?.response?.data?.message);
-        setcreatePostLoading(false);
-      });
+
+    try {
+      await CreatePost(post);
+      navigate("/");
+    } catch (error) {
+      setError(error?.response?.data?.message || error.message);
+    } finally {
+      setcreatePostLoading(false);
+    }
   };
 
   return (
     <Form>
       <Top>
         <Title>Generate Image with prompt</Title>
-        <Desc>
-          Write your prompt according to the image you want to generate!
-        </Desc>
+        <Desc>Write your prompt according to the image you want to generate!</Desc>
       </Top>
       <Body>
         <TextInput
@@ -114,8 +124,8 @@ const GenerateImage = ({
           value={post.prompt}
           handelChange={(e) => setPost({ ...post, prompt: e.target.value })}
         />
-        {error && <div style={{ color: "red" }}>{error}</div>}* You can post the
-        AI Generated Image to showcase in the community!
+        {error && <div style={{ color: "red" }}>{error}</div>}
+        * You can post the AI Generated Image to showcase in the community!
       </Body>
       <Actions>
         <Button
@@ -123,22 +133,22 @@ const GenerateImage = ({
           leftIcon={<AutoAwesome />}
           flex
           isLoading={generateImageLoading}
-          isDisabled={post.prompt === ""}
-          onClick={(e) => generateImage()}
+          isDisabled={post.prompt.trim() === ""}
+          onClick={generateImage}
         />
         <Button
           text="Post Image"
           leftIcon={<CreateRounded />}
           type="secondary"
           flex
-          isDisabled={
-            post.name === "" || post.photo === "" || post.prompt === ""
-          }
+          isDisabled={post.name.trim() === "" || post.photo === "" || post.prompt.trim() === ""}
           isLoading={createPostLoading}
-          onClick={() => createPost()}
+          onClick={createPost}
         />
+    
       </Actions>
     </Form>
+    
   );
 };
 
