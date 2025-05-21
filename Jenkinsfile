@@ -37,7 +37,7 @@ pipeline {
                     docker rm -f ai-client || true
 
                     docker run -d --name ai-server -p 8081:8081 \\
-                      -e MONGODB_URL="your_mongodb_url" \\
+                      -e MONGODB_URL="mongodb+srv://sanmathisedhupathi2004:08-Sep-2004@sanmathi22isr045.w5x9j5u.mongodb.net/?retryWrites=true&w=majority&appName=sanmathi22ISR045" \\
                       -e CLOUDINARY_CLOUD_NAME="degp5o85d" \\
                       -e CLOUDINARY_API_KEY="429586181836363" \\
                       -e CLOUDINARY_API_SECRET="G80mJvQnzvf1kQAlhy5bJ6qH2tM" \\
