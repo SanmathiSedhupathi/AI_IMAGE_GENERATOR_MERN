@@ -20,16 +20,16 @@ A full-stack AI image generator web application built using the MERN stack (Mong
 ## 📁 Project Structure
 
 AI_IMAGE_GENERATOR_MERN/
-├── client/ # React frontend
-│ ├── src/
-│ └── ...
-├── server/ # Express backend
-│ ├── controllers/
-│ ├── routes/
-│ ├── models/
-│ └── ...
-├── .env # Environment variables
-└── README.md
+- ├── client/ # React frontend
+- │ ├── src/
+- │ └── ...
+- ├── server/ # Express backend
+- │ ├── controllers/
+- │ ├── routes/
+- │ ├── models/
+- │ └── ...
+- ├── .env # Environment variables
+- └── README.md
 
 ## ⚙️ Getting Started
 
@@ -65,13 +65,13 @@ Open your browser and go to: http://localhost:5173
 
 
 ### 📌 Notes
-The Hugging Face API is used to send text prompts and receive generated images from Stable Diffusion.
+- The Hugging Face API is used to send text prompts and receive generated images from Stable Diffusion.
 
-Ensure your API key from Hugging Face has access to the runwayml/stable-diffusion-v1-5 or equivalent inference endpoint.
+- Ensure your API key from Hugging Face has access to the runwayml/stable-diffusion-v1-5 or equivalent inference endpoint.
 
 ### 📄 License
-This project is licensed under the MIT License.
+- This project is licensed under the MIT License.
 
 ### 🙋‍♀️ Author
-Sanmathi Sedhupathi
-Software Devloper | GitHub
+- Sanmathi Sedhupathi
+- Software Devloper | GitHub
