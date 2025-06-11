@@ -39,7 +39,7 @@ AI_IMAGE_GENERATOR_MERN/
 git clone https://github.com/SanmathiSedhupathi/AI_IMAGE_GENERATOR_MERN.git
 cd AI_IMAGE_GENERATOR_MERN
 ```
-2. Setup Backend (Server)
+### 2. Setup Backend (Server)
 ```bash
 cd server
 npm install
@@ -54,24 +54,24 @@ Then start the server:
 ```bash
 npm run dev
 ```
-3. Setup Frontend (Client)
+### 3. Setup Frontend (Client)
 ```bash
 cd client
 npm install
 npm run dev
 ```
-4. Run the Application
+### 4. Run the Application
 Open your browser and go to: http://localhost:5173
 
 
-📌 Notes
+### 📌 Notes
 The Hugging Face API is used to send text prompts and receive generated images from Stable Diffusion.
 
 Ensure your API key from Hugging Face has access to the runwayml/stable-diffusion-v1-5 or equivalent inference endpoint.
 
-📄 License
+### 📄 License
 This project is licensed under the MIT License.
 
-🙋‍♀️ Author
+### 🙋‍♀️ Author
 Sanmathi Sedhupathi
 Software Devloper | GitHub
