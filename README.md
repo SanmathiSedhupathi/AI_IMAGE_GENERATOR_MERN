@@ -38,37 +38,31 @@ AI_IMAGE_GENERATOR_MERN/
 ```bash
 git clone https://github.com/SanmathiSedhupathi/AI_IMAGE_GENERATOR_MERN.git
 cd AI_IMAGE_GENERATOR_MERN
+```
 2. Setup Backend (Server)
-bash
-Copy
-Edit
+```bash
 cd server
 npm install
-Create a .env file inside the server/ directory with:
+```
 
-env
-Copy
-Edit
+Create a .env file inside the server/ directory with:
+```bash
 MONGODB_URL=your_mongodb_connection_string
 HUGGINGFACE_API_KEY=your_huggingface_api_key
+```
 Then start the server:
-
-bash
-Copy
-Edit
+```bash
 npm run dev
+```
 3. Setup Frontend (Client)
-bash
-Copy
-Edit
+```bash
 cd client
 npm install
 npm run dev
+```
 4. Run the Application
 Open your browser and go to: http://localhost:5173
 
-📷 Sample UI (Optional)
-Add screenshots of your web UI here to showcase the design and features.
 
 📌 Notes
 The Hugging Face API is used to send text prompts and receive generated images from Stable Diffusion.
