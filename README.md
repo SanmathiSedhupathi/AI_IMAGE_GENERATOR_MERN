@@ -17,19 +17,19 @@ A full-stack AI image generator web application built using the MERN stack (Mong
 - **Database:** MongoDB Atlas
 - **AI API:** Hugging Face (Stable Diffusion Inference API)
 
-## 📁 Project Structure
+## 📁 Project Structure   
 
-AI_IMAGE_GENERATOR_MERN/
-├── client/ # React frontend    
-│ ├── src/   
-│ └── ...   
-├── server/ # Express backend   
-│ ├── controllers/
-│ ├── routes/
-│ ├── models/
-| └── ...
-├── .env # Environment variables
-└── README.md
+AI_IMAGE_GENERATOR_MERN/ <br />   
+├── client/ # React frontend   <br /> 
+│ ├── src/   <br />
+│ └── ...    <br /> 
+├── server/ # Express backend   <br />     
+│ ├── controllers/  <br />
+│ ├── routes/   <br />
+│ ├── models/<br  />
+| └── ...<br/>
+├── .env # Environment variables <br/>
+└── README.md  <br/>
 
 ## ⚙️ Getting Started
 
