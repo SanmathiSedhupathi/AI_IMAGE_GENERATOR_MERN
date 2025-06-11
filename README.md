@@ -20,16 +20,16 @@ A full-stack AI image generator web application built using the MERN stack (Mong
 ## 📁 Project Structure
 
 AI_IMAGE_GENERATOR_MERN/
--- ├── client/ # React frontend
--- │ ├── src/
-- │ └── ...
-- ├── server/ # Express backend
-- │ ├── controllers/
-- │ ├── routes/
-- │ ├── models/
-- │ └── ...
-- ├── .env # Environment variables
-- └── README.md
+├── client/ # React frontend    
+│ ├── src/   
+│ └── ...   
+├── server/ # Express backend   
+│ ├── controllers/
+│ ├── routes/
+│ ├── models/
+| └── ...
+├── .env # Environment variables
+└── README.md
 
 ## ⚙️ Getting Started
 
