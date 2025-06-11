@@ -20,8 +20,8 @@ A full-stack AI image generator web application built using the MERN stack (Mong
 ## 📁 Project Structure
 
 AI_IMAGE_GENERATOR_MERN/
-- ├── client/ # React frontend
-- │ ├── src/
+-- ├── client/ # React frontend
+-- │ ├── src/
 - │ └── ...
 - ├── server/ # Express backend
 - │ ├── controllers/
@@ -73,5 +73,5 @@ Open your browser and go to: http://localhost:5173
 - This project is licensed under the MIT License.
 
 ### 🙋‍♀️ Author
-- Sanmathi Sedhupathi
-- Software Devloper | GitHub
+Sanmathi Sedhupathi
+Software Devloper | GitHub
