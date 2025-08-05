@@ -4,6 +4,7 @@ import SearchBar from "../components/SearchBar";
 import ImageCard from "../components/cards/ImageCard";
 import { GetPosts } from "../api";
 import { CircularProgress } from "@mui/material";
+import Footer from "./Footer";
 
 const Container = styled.div`
   padding: 30px 30px;
@@ -130,6 +131,36 @@ const Home = () => {
             ) : (
               <>No Posts Found !!</>
             )}
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora
+              magni esse beatae ullam provident vel fugit sit ipsum, odio
+              voluptatem, perferendis vitae sunt sed in minima mollitia nobis
+              eaque quas?
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora
+              magni esse beatae ullam provident vel fugit sit ipsum, odio
+              voluptatem, perferendis vitae sunt sed in minima mollitia nobis
+              eaque quas?
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora
+              magni esse beatae ullam provident vel fugit sit ipsum, odio
+              voluptatem, perferendis vitae sunt sed in minima mollitia nobis
+              eaque quas?
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora
+              magni esse beatae ullam provident vel fugit sit ipsum, odio
+              voluptatem, perferendis vitae sunt sed in minima mollitia nobis
+              eaque quas?
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora
+              magni esse beatae ullam provident vel fugit sit ipsum, odio
+              voluptatem, perferendis vitae sunt sed in minima mollitia nobis
+              eaque quas?
+            </p>
           </CardWrapper>
         )}
       </Wrapper>
