@@ -4,6 +4,7 @@ import SearchBar from "../components/SearchBar";
 import ImageCard from "../components/cards/ImageCard";
 import { GetPosts } from "../api";
 import { CircularProgress } from "@mui/material";
+import Footer from "./Footer";
 
 const Container = styled.div`
   padding: 30px 30px;
