@@ -1,7 +1,10 @@
 import React from "react";
 import "../footer.css";
+import { useTheme } from "../context/ThemeContext";
 
 const Footer = () => {
+  const {theme} = useTheme();
+  const iconcolor = theme === "dark" ? "ffffff" : "242B3F";
   return (
     <footer>
       <div className="footer-logo">
@@ -21,7 +24,7 @@ const Footer = () => {
           rel="noreferrer"
         >
           <img
-            src="https://img.icons8.com/?size=100&id=62856&format=png&color=ffffff"
+            src={`https://img.icons8.com/?size=100&id=62856&format=png&color=${iconcolor}`}
             alt="GitHub"
             width="35"
           />
@@ -33,7 +36,7 @@ const Footer = () => {
           rel="noreferrer"
         >
           <img
-            src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png"
+            src={`https://img.icons8.com/ios-filled/50/${iconcolor}/linkedin.png`}
             alt="LinkedIn"
             width="35"
           />
@@ -45,7 +48,7 @@ const Footer = () => {
           rel="noreferrer"
         >
           <img
-            src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png"
+            src={`https://img.icons8.com/ios-filled/50/${iconcolor}/instagram-new.png`}
             alt="Instagram"
             width="35"
           />

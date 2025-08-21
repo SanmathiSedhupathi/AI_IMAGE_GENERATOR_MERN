@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import CreatePost from "./pages/CreatePost";
 import Footer from "./pages/Footer";
+import { ThemeProvider as CustomThemeProvider, useTheme } from "./context/ThemeContext";
 
 const Container = styled.div`
   width: 100%;
@@ -26,9 +27,11 @@ const Wrapper = styled.div`
   flex: 3;
 `;
 
-function App() {
+// Create a wrapper component to use the useTheme hook
+function AppContent() {
+  const { theme } = useTheme();
   return (
-    <ThemeProvider theme={darkTheme}>
+    <ThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>
       <Container>
         <Wrapper>
           <BrowserRouter>
@@ -42,6 +45,14 @@ function App() {
         </Wrapper>
       </Container>
     </ThemeProvider>
+  );
+}
+
+function App() {
+  return (
+    <CustomThemeProvider>
+      <AppContent />
+    </CustomThemeProvider>
   );
 }
 
