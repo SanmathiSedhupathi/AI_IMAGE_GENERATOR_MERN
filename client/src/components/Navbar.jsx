@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import Button from "./buttons/button";
+import { useTheme } from "../context/ThemeContext";
+import MaterialUISwitch from "./toggle/Toggle";
 import { useLocation, useNavigate } from "react-router";
 import { AddRounded, WebRounded } from "@mui/icons-material";
 
@@ -23,6 +25,7 @@ const Container = styled.div`
 const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { theme, toggleTheme } = useTheme();
 
   let path = location.pathname.split("/");
 
@@ -35,7 +38,8 @@ const Navbar = () => {
   console.log(path);
   return (
     <Container>
-      Sanmathi_Sethupathi
+      DreamPixel
+      <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
       {path[1] === "post" ? (
         <Button
           text="Explore Posts"
@@ -50,6 +54,8 @@ const Navbar = () => {
           onClick={gotoCreatePost}
         />
       )}
+      <MaterialUISwitch checked={theme === "dark"} onChange={toggleTheme} />
+      </div>
     </Container>
   );
 };
